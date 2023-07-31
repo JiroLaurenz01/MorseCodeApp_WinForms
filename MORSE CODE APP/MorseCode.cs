@@ -34,7 +34,7 @@ namespace MORSE_CODE_APP
                 }
                 catch
                 {
-                    translatedTBox.Text += "#"; // If Morse code is invalid, display a "#"
+                    translatedTBox.Text += "#"; // If Morse code is invalid, display a "#".
                 }
         }
 
