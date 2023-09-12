@@ -271,6 +271,7 @@
             this.pasteBtn.Size = new System.Drawing.Size(63, 30);
             this.pasteBtn.TabIndex = 7;
             this.pasteBtn.Text = "PASTE";
+            this.pasteBtn.Click += new System.EventHandler(this.pasteBtn_Click);
             // 
             // copyBtn
             // 
@@ -289,6 +290,7 @@
             this.copyBtn.Size = new System.Drawing.Size(60, 30);
             this.copyBtn.TabIndex = 6;
             this.copyBtn.Text = "COPY";
+            this.copyBtn.Click += new System.EventHandler(this.copyBtn_Click);
             // 
             // cleatBtn
             // 
@@ -307,6 +309,7 @@
             this.cleatBtn.Size = new System.Drawing.Size(67, 30);
             this.cleatBtn.TabIndex = 5;
             this.cleatBtn.Text = "CLEAR";
+            this.cleatBtn.Click += new System.EventHandler(this.cleatBtn_Click);
             // 
             // inputTextBox
             // 
