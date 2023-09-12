@@ -67,15 +67,15 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.toLetterBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.toCodeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pasteBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.copyBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.cleatBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.inputTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ContainerControl1.SuspendLayout();
@@ -127,7 +127,7 @@
             // 
             this.guna2Panel1.Controls.Add(this.guna2Panel5);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
+            this.guna2Panel1.Controls.Add(this.inputTextBox);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.CustomizableEdges = customizableEdges29;
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -146,8 +146,8 @@
             this.guna2Panel5.BorderThickness = 2;
             this.guna2Panel5.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel5.Controls.Add(this.guna2Panel6);
-            this.guna2Panel5.Controls.Add(this.guna2Button4);
-            this.guna2Panel5.Controls.Add(this.guna2Button5);
+            this.guna2Panel5.Controls.Add(this.toLetterBtn);
+            this.guna2Panel5.Controls.Add(this.toCodeBtn);
             this.guna2Panel5.CustomizableEdges = customizableEdges13;
             this.guna2Panel5.FillColor = System.Drawing.Color.Honeydew;
             this.guna2Panel5.Location = new System.Drawing.Point(13, 91);
@@ -177,41 +177,43 @@
             this.guna2Panel6.Size = new System.Drawing.Size(2, 22);
             this.guna2Panel6.TabIndex = 5;
             // 
-            // guna2Button4
+            // toLetterBtn
             // 
-            this.guna2Button4.BorderRadius = 5;
-            this.guna2Button4.CustomizableEdges = customizableEdges9;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.Honeydew;
-            this.guna2Button4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button4.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.guna2Button4.Location = new System.Drawing.Point(203, 2);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            this.guna2Button4.Size = new System.Drawing.Size(71, 30);
-            this.guna2Button4.TabIndex = 7;
-            this.guna2Button4.Text = "LETTER";
+            this.toLetterBtn.BorderRadius = 5;
+            this.toLetterBtn.CustomizableEdges = customizableEdges9;
+            this.toLetterBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.toLetterBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.toLetterBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.toLetterBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.toLetterBtn.FillColor = System.Drawing.Color.Honeydew;
+            this.toLetterBtn.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.toLetterBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.toLetterBtn.Location = new System.Drawing.Point(203, 2);
+            this.toLetterBtn.Name = "toLetterBtn";
+            this.toLetterBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.toLetterBtn.Size = new System.Drawing.Size(71, 30);
+            this.toLetterBtn.TabIndex = 7;
+            this.toLetterBtn.Text = "LETTER";
+            this.toLetterBtn.Click += new System.EventHandler(this.toLetterBtn_Click);
             // 
-            // guna2Button5
+            // toCodeBtn
             // 
-            this.guna2Button5.BorderRadius = 5;
-            this.guna2Button5.CustomizableEdges = customizableEdges11;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.Honeydew;
-            this.guna2Button5.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button5.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.guna2Button5.Location = new System.Drawing.Point(139, 2);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.guna2Button5.Size = new System.Drawing.Size(60, 30);
-            this.guna2Button5.TabIndex = 6;
-            this.guna2Button5.Text = "CODE";
+            this.toCodeBtn.BorderRadius = 5;
+            this.toCodeBtn.CustomizableEdges = customizableEdges11;
+            this.toCodeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.toCodeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.toCodeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.toCodeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.toCodeBtn.FillColor = System.Drawing.Color.Honeydew;
+            this.toCodeBtn.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.toCodeBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.toCodeBtn.Location = new System.Drawing.Point(139, 2);
+            this.toCodeBtn.Name = "toCodeBtn";
+            this.toCodeBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.toCodeBtn.Size = new System.Drawing.Size(60, 30);
+            this.toCodeBtn.TabIndex = 6;
+            this.toCodeBtn.Text = "CODE";
+            this.toCodeBtn.Click += new System.EventHandler(this.toCodeBtn_Click);
             // 
             // guna2Panel2
             // 
@@ -221,9 +223,9 @@
             this.guna2Panel2.BorderThickness = 2;
             this.guna2Panel2.Controls.Add(this.guna2Panel3);
             this.guna2Panel2.Controls.Add(this.guna2Panel4);
-            this.guna2Panel2.Controls.Add(this.guna2Button3);
-            this.guna2Panel2.Controls.Add(this.guna2Button2);
-            this.guna2Panel2.Controls.Add(this.guna2Button1);
+            this.guna2Panel2.Controls.Add(this.pasteBtn);
+            this.guna2Panel2.Controls.Add(this.copyBtn);
+            this.guna2Panel2.Controls.Add(this.cleatBtn);
             this.guna2Panel2.CustomizableEdges = customizableEdges25;
             this.guna2Panel2.FillColor = System.Drawing.Color.Honeydew;
             this.guna2Panel2.Location = new System.Drawing.Point(359, 91);
@@ -252,87 +254,88 @@
             this.guna2Panel4.Size = new System.Drawing.Size(2, 22);
             this.guna2Panel4.TabIndex = 6;
             // 
-            // guna2Button3
+            // pasteBtn
             // 
-            this.guna2Button3.BorderRadius = 5;
-            this.guna2Button3.CustomizableEdges = customizableEdges19;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.Honeydew;
-            this.guna2Button3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button3.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.guna2Button3.Location = new System.Drawing.Point(136, 2);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            this.guna2Button3.Size = new System.Drawing.Size(63, 30);
-            this.guna2Button3.TabIndex = 7;
-            this.guna2Button3.Text = "PASTE";
+            this.pasteBtn.BorderRadius = 5;
+            this.pasteBtn.CustomizableEdges = customizableEdges19;
+            this.pasteBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.pasteBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.pasteBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.pasteBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.pasteBtn.FillColor = System.Drawing.Color.Honeydew;
+            this.pasteBtn.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pasteBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.pasteBtn.Location = new System.Drawing.Point(136, 2);
+            this.pasteBtn.Name = "pasteBtn";
+            this.pasteBtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            this.pasteBtn.Size = new System.Drawing.Size(63, 30);
+            this.pasteBtn.TabIndex = 7;
+            this.pasteBtn.Text = "PASTE";
             // 
-            // guna2Button2
+            // copyBtn
             // 
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.CustomizableEdges = customizableEdges21;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Honeydew;
-            this.guna2Button2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button2.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.guna2Button2.Location = new System.Drawing.Point(72, 2);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            this.guna2Button2.Size = new System.Drawing.Size(60, 30);
-            this.guna2Button2.TabIndex = 6;
-            this.guna2Button2.Text = "COPY";
+            this.copyBtn.BorderRadius = 5;
+            this.copyBtn.CustomizableEdges = customizableEdges21;
+            this.copyBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.copyBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.copyBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.copyBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.copyBtn.FillColor = System.Drawing.Color.Honeydew;
+            this.copyBtn.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.copyBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.copyBtn.Location = new System.Drawing.Point(72, 2);
+            this.copyBtn.Name = "copyBtn";
+            this.copyBtn.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            this.copyBtn.Size = new System.Drawing.Size(60, 30);
+            this.copyBtn.TabIndex = 6;
+            this.copyBtn.Text = "COPY";
             // 
-            // guna2Button1
+            // cleatBtn
             // 
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.CustomizableEdges = customizableEdges23;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Honeydew;
-            this.guna2Button1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button1.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.guna2Button1.Location = new System.Drawing.Point(2, 2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            this.guna2Button1.Size = new System.Drawing.Size(67, 30);
-            this.guna2Button1.TabIndex = 5;
-            this.guna2Button1.Text = "CLEAR";
+            this.cleatBtn.BorderRadius = 5;
+            this.cleatBtn.CustomizableEdges = customizableEdges23;
+            this.cleatBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.cleatBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.cleatBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.cleatBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.cleatBtn.FillColor = System.Drawing.Color.Honeydew;
+            this.cleatBtn.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cleatBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.cleatBtn.Location = new System.Drawing.Point(2, 2);
+            this.cleatBtn.Name = "cleatBtn";
+            this.cleatBtn.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            this.cleatBtn.Size = new System.Drawing.Size(67, 30);
+            this.cleatBtn.TabIndex = 5;
+            this.cleatBtn.Text = "CLEAR";
             // 
-            // guna2TextBox1
+            // inputTextBox
             // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.guna2TextBox1.BorderRadius = 5;
-            this.guna2TextBox1.BorderThickness = 2;
-            this.guna2TextBox1.CustomizableEdges = customizableEdges27;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.Honeydew;
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.DarkOliveGreen;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2TextBox1.Location = new System.Drawing.Point(13, 128);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.guna2TextBox1.Multiline = true;
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Input the text here";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            this.guna2TextBox1.Size = new System.Drawing.Size(546, 398);
-            this.guna2TextBox1.TabIndex = 1;
+            this.inputTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.inputTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.inputTextBox.BorderRadius = 5;
+            this.inputTextBox.BorderThickness = 2;
+            this.inputTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.inputTextBox.CustomizableEdges = customizableEdges27;
+            this.inputTextBox.DefaultText = "";
+            this.inputTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.inputTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.inputTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inputTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.inputTextBox.FillColor = System.Drawing.Color.Honeydew;
+            this.inputTextBox.FocusedState.BorderColor = System.Drawing.Color.DarkOliveGreen;
+            this.inputTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.inputTextBox.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.inputTextBox.HoverState.BorderColor = System.Drawing.Color.DarkSeaGreen;
+            this.inputTextBox.Location = new System.Drawing.Point(13, 128);
+            this.inputTextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.inputTextBox.Multiline = true;
+            this.inputTextBox.Name = "inputTextBox";
+            this.inputTextBox.PasswordChar = '\0';
+            this.inputTextBox.PlaceholderText = "Input the text here";
+            this.inputTextBox.SelectedText = "";
+            this.inputTextBox.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            this.inputTextBox.Size = new System.Drawing.Size(546, 398);
+            this.inputTextBox.TabIndex = 1;
             // 
             // guna2HtmlLabel1
             // 
@@ -379,17 +382,17 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox inputTextBox;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button cleatBtn;
+        private Guna.UI2.WinForms.Guna2Button copyBtn;
+        private Guna.UI2.WinForms.Guna2Button pasteBtn;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button toLetterBtn;
+        private Guna.UI2.WinForms.Guna2Button toCodeBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }
