@@ -206,9 +206,10 @@
             this.MaximumSize = new System.Drawing.Size(493, 235);
             this.MinimumSize = new System.Drawing.Size(493, 235);
             this.Name = "MorseCode";
+            this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MORSE CODE APP";
+            this.Text = "MorseCode Translator";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
