@@ -17,7 +17,7 @@ namespace MORSE_CODE_APP
             InitializeComponent();
         }
 
-        #region FUNCTION TO CONVERT THE LETTER TO MORSE CODE.
+        #region FUNCTION TO CONVERT THE LETTER INTO MORSE CODE.
 
         private void toCodeBtn_Click(object sender, EventArgs e)
         {
@@ -48,7 +48,7 @@ namespace MORSE_CODE_APP
 
         #endregion 
 
-        #region FUNCTION TO CONVERT THE MORSE CODE TO LETTER.
+        #region FUNCTION TO CONVERT THE MORSE CODE INTO LETTER.
 
         private void toLetterBtn_Click(object sender, EventArgs e)
         {
@@ -56,6 +56,8 @@ namespace MORSE_CODE_APP
             char[] morseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!.,;:+-/= ".ToCharArray();
             string[] morseCodes = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "-----", "..--..", "-.-.--", ".-.-.-", "--..--", "-.-.-.", "---...", ".-.-.", "-....-", "-..-.", "-...-", "|" };
 
+            if (!String.IsNullOrEmpty(inputTextBox.Text))
+            {
             string morse = inputTextBox.Text;
             inputTextBox.Text = string.Empty;
             morse = morse.TrimEnd(' ');
@@ -73,6 +75,9 @@ namespace MORSE_CODE_APP
                 {
                     inputTextBox.Text += "#"; // If Morse code is invalid, display a "#".
                 }
+            }
+            else
+                MessageBox.Show("Please, input the text first");
         }
 
         #endregion
