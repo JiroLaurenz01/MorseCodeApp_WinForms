@@ -335,6 +335,7 @@
             this.inputTextBox.Name = "inputTextBox";
             this.inputTextBox.PasswordChar = '\0';
             this.inputTextBox.PlaceholderText = "Input the text here";
+            this.inputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.inputTextBox.SelectedText = "";
             this.inputTextBox.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.inputTextBox.Size = new System.Drawing.Size(546, 398);
