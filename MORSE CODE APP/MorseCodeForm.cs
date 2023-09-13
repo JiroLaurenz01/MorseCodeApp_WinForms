@@ -25,20 +25,25 @@ namespace MORSE_CODE_APP
             char[] morseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!.,;:+-/= ".ToCharArray();
             string[] morseCodes = { ".- ", "-... ", "-.-. ", "-.. ", ". ", "..-. ", "--. ", ".... ", ".. ", ".--- ", "-.- ", ".-.. ", "-- ", "-. ", "--- ", ".--. ", "--.- ", ".-. ", "... ", "- ", "..- ", "...- ", ".-- ", "-..- ", "-.-- ", "--.. ", ".---- ", "..--- ", "...-- ", "....- ", "..... ", "-.... ", "--... ", "---.. ", "----. ", "----- ", "..--.. ", "-.-.-- ", ".-.-.- ", "--..-- ", "-.-.-. ", "---... ", ".-.-. ", "-....- ", "-..-. ", "-...- ", "| " };
 
-            string letters = inputTextBox.Text.ToUpper();
-            inputTextBox.Text = string.Empty;
+            if (!String.IsNullOrEmpty(inputTextBox.Text))
+            {
+                string letters = inputTextBox.Text.ToUpper();
+                inputTextBox.Text = string.Empty;
 
-            // Translate each letter to Morse code
-            for (int i = 0; i < letters.Length; i++)
-                try
-                {
-                    // Translates the letter or symbol (letters[i]) to its corresponding Morse code element.
-                    inputTextBox.Text += morseCodes[Array.IndexOf(morseLetters, letters[i])];
-                }
-                catch
-                {
-                    inputTextBox.Text += "#"; // If letter is invalid, display a "#"
-                }
+                // Translate each letter to Morse code
+                for (int i = 0; i < letters.Length; i++)
+                    try
+                    {
+                        // Translates the letter or symbol (letters[i]) to its corresponding Morse code element.
+                        inputTextBox.Text += morseCodes[Array.IndexOf(morseLetters, letters[i])];
+                    }
+                    catch
+                    {
+                        inputTextBox.Text += "#"; // If letter is invalid, display a "#"
+                    }
+            }
+            else
+                MessageBox.Show("Please, input the text first");
         }
 
         #endregion 
