@@ -65,7 +65,7 @@ namespace MORSE_CODE_APP
 
         #region FUNCTION TO CONVERT THE MORSE CODE INTO LETTER.
 
-        private void toLetterBtn_Click(object sender, EventArgs e)
+        private async void toLetterBtn_Click(object sender, EventArgs e)
         {
             // Morse code representations of letters and symbols
             char[] morseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!.,;:+-/= ".ToCharArray();
@@ -73,23 +73,37 @@ namespace MORSE_CODE_APP
 
             if (!String.IsNullOrEmpty(inputTextBox.Text))
             {
-            string morse = inputTextBox.Text;
-            inputTextBox.Text = string.Empty;
-            morse = morse.TrimEnd(' ');
+                string morse = inputTextBox.Text;
+                morse = morse.TrimEnd(' ');
+                string[] morseArray = morse.Split(' ');
 
-            string[] morseArray = morse.Split(' ');
+                // Show the loading screen form on the UI thread
+                LoadingScreenForm loadingScreen = new();
+                Invoke(new Action(() => loadingScreen.ShowDialog()));
 
-            // Translate each Morse code element to a letter or symbol
-            for (int i = 0; i < morseArray.Length; i++)
-                try
+                // Translate each letter to Morse code
+                string resultHolder = await Task.Run(() =>
                 {
-                    // Translates Morse code element (morseArray[i]) to its corresponding letter or symbol.
-                    inputTextBox.Text += morseLetters[Array.IndexOf(morseCodes, morseArray[i])];
-                }
-                catch
-                {
-                    inputTextBox.Text += "#"; // If Morse code is invalid, display a "#".
-                }
+                    StringBuilder result = new StringBuilder();
+
+                    for (int i = 0; i < morseArray.Length; i++)
+                    {
+                        try
+                        {
+                            // Translates Morse code element (morseArray[i]) to its corresponding letter or symbol.
+                            result.Append(morseLetters[Array.IndexOf(morseCodes, morseArray[i])]);
+                        }
+                        catch
+                        {
+                            result.Append('#'); // If letter is invalid, display a "#"
+                        }
+                    }
+
+                    return result.ToString();
+                });
+
+                // Update the UI with the result
+                this.Invoke(new Action(() => inputTextBox.Text = resultHolder));
             }
             else
                 MessageBox.Show("Please, input the text first");
@@ -100,7 +114,7 @@ namespace MORSE_CODE_APP
         #region FUNCTIONS FOR CLEAR, COPY, AND PASTE BUTTONS.
 
         private void cleatBtn_Click(object sender, EventArgs e) => inputTextBox.Clear();
-        private void pasteBtn_Click(object sender, EventArgs e) => inputTextBox.Text = Clipboard.GetText();
+        private void pasteBtn_Click(object sender, EventArgs e) => inputTextBox.Text += Clipboard.GetText();
         private void copyBtn_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(inputTextBox.Text))
