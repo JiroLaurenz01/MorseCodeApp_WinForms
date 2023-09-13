@@ -85,8 +85,14 @@ namespace MORSE_CODE_APP
         #region FUNCTIONS FOR CLEAR, COPY, AND PASTE BUTTONS.
 
         private void cleatBtn_Click(object sender, EventArgs e) => inputTextBox.Clear();
-        private void copyBtn_Click(object sender, EventArgs e) => Clipboard.SetText(inputTextBox.Text);
         private void pasteBtn_Click(object sender, EventArgs e) => inputTextBox.Text = Clipboard.GetText();
+        private void copyBtn_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(inputTextBox.Text))
+                Clipboard.SetText(inputTextBox.Text);
+            else
+                MessageBox.Show("Please, input the text first");
+        }
 
         #endregion
     }
