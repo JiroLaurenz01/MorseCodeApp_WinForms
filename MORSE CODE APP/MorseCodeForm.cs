@@ -28,19 +28,21 @@ namespace MORSE_CODE_APP
             if (!String.IsNullOrEmpty(inputTextBox.Text))
             {
                 string letters = inputTextBox.Text.ToUpper();
-                inputTextBox.Text = string.Empty;
+                string resultHolder = "";
 
                 // Translate each letter to Morse code
                 for (int i = 0; i < letters.Length; i++)
                     try
                     {
                         // Translates the letter or symbol (letters[i]) to its corresponding Morse code element.
-                        inputTextBox.Text += morseCodes[Array.IndexOf(morseLetters, letters[i])];
+                        resultHolder += morseCodes[Array.IndexOf(morseLetters, letters[i])];
                     }
                     catch
                     {
-                        inputTextBox.Text += "#"; // If letter is invalid, display a "#"
+                        resultHolder += "#"; // If letter is invalid, display a "#"
                     }
+
+                inputTextBox.Text = resultHolder;
             }
             else
                 MessageBox.Show("Please, input the text first");
