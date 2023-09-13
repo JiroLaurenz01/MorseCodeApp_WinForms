@@ -19,7 +19,7 @@ namespace MORSE_CODE_APP
 
         #region FUNCTION TO CONVERT THE LETTER INTO MORSE CODE.
 
-        private void toCodeBtn_Click(object sender, EventArgs e)
+        private async void toCodeBtn_Click(object sender, EventArgs e)
         {
             // Morse code representations of letters and symbols
             char[] morseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!.,;:+-/= ".ToCharArray();
@@ -28,21 +28,34 @@ namespace MORSE_CODE_APP
             if (!String.IsNullOrEmpty(inputTextBox.Text))
             {
                 string letters = inputTextBox.Text.ToUpper();
-                string resultHolder = "";
+
+                // Show the loading screen form on the UI thread
+                LoadingScreenForm loadingScreen = new();
+                Invoke(new Action(() => loadingScreen.ShowDialog()));
 
                 // Translate each letter to Morse code
-                for (int i = 0; i < letters.Length; i++)
-                    try
+                string resultHolder = await Task.Run(() =>
+                {
+                    StringBuilder result = new StringBuilder();
+
+                    for (int i = 0; i < letters.Length; i++)
                     {
-                        // Translates the letter or symbol (letters[i]) to its corresponding Morse code element.
-                        resultHolder += morseCodes[Array.IndexOf(morseLetters, letters[i])];
-                    }
-                    catch
-                    {
-                        resultHolder += "#"; // If letter is invalid, display a "#"
+                        try
+                        {
+                            // Translates the letter or symbol (letters[i]) to its corresponding Morse code element.
+                            result.Append(morseCodes[Array.IndexOf(morseLetters, letters[i])]);
+                        }
+                        catch
+                        {
+                            result.Append('#'); // If letter is invalid, display a "#"
+                        }
                     }
 
-                inputTextBox.Text = resultHolder;
+                    return result.ToString();
+                });
+
+                // Update the UI with the result
+                this.Invoke(new Action(() => inputTextBox.Text = resultHolder));
             }
             else
                 MessageBox.Show("Please, input the text first");
