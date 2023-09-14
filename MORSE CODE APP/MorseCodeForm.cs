@@ -27,6 +27,7 @@ namespace MORSE_CODE_APP
 
             if (!String.IsNullOrEmpty(inputTextBox.Text))
             {
+                // Get the input text from the TextBox and convert it to uppercase
                 string letters = inputTextBox.Text.ToUpper();
 
                 // Show the loading screen form on the UI thread
@@ -36,8 +37,10 @@ namespace MORSE_CODE_APP
                 // Translate each letter to Morse code
                 string resultHolder = await Task.Run(() =>
                 {
+                    // Create a StringBuilder to build the Morse code result
                     StringBuilder result = new StringBuilder();
 
+                    // Iterate through each character in the input text
                     for (int i = 0; i < letters.Length; i++)
                     {
                         try
@@ -47,19 +50,22 @@ namespace MORSE_CODE_APP
                         }
                         catch
                         {
-                            result.Append('#'); // If letter is invalid, display a "#"
+                            // If the letter is invalid, display a "#" in the result
+                            result.Append('#');
                         }
                     }
 
+                    // Convert the StringBuilder result to a string and return it
                     return result.ToString();
                 });
 
-                // Update the UI with the result
+                // Update the UI with the Morse code result
                 this.Invoke(new Action(() => inputTextBox.Text = resultHolder));
             }
-            else
+            else // Display a message box if the input text is empty
                 MessageBox.Show("Please, input the text first");
         }
+
 
         #endregion 
 
