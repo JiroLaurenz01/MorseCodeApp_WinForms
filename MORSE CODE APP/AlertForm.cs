@@ -155,5 +155,17 @@ namespace MORSE_CODE_APP
         }
 
         #endregion
+
+        #region FUNCTION TO REMOVE THE ALERT NOTIFICATION MANUALLY
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            // Event handler for the remove button's click event.
+
+            timer.Interval = 1;
+            action = Action.close;
+        }
+
+        #endregion
     }
 }
