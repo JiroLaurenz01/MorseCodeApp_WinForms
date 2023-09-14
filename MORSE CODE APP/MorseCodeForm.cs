@@ -61,11 +61,11 @@ namespace MORSE_CODE_APP
 
                 // Update the UI with the Morse code result
                 this.Invoke(new Action(() => inputTextBox.Text = resultHolder));
+                Alert("Successfully Convert", AlertForm.Type.Success);
             }
             else // Display a message box if the input text is empty
-                MessageBox.Show("Please, input the text first");
+                Alert("Input field is empty", AlertForm.Type.Error);
         }
-
 
         #endregion 
 
@@ -113,9 +113,10 @@ namespace MORSE_CODE_APP
 
                 // Update the UI with the result
                 this.Invoke(new Action(() => inputTextBox.Text = resultHolder));
+                Alert("Successfully Convert", AlertForm.Type.Success);
             }
             else
-                MessageBox.Show("Please, input the text first");
+                Alert("Input field is empty", AlertForm.Type.Error);
         }
 
         #endregion
@@ -123,13 +124,20 @@ namespace MORSE_CODE_APP
         #region FUNCTIONS FOR CLEAR, COPY, AND PASTE BUTTONS.
 
         private void cleatBtn_Click(object sender, EventArgs e) => inputTextBox.Clear();
-        private void pasteBtn_Click(object sender, EventArgs e) => inputTextBox.Text += Clipboard.GetText();
+        private void pasteBtn_Click(object sender, EventArgs e) 
+        {
+            inputTextBox.Text += Clipboard.GetText();
+            Alert("Paste from Clipboard", AlertForm.Type.Info);
+        } 
         private void copyBtn_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(inputTextBox.Text))
+            {
                 Clipboard.SetText(inputTextBox.Text);
+                Alert("Copy to Clipboard", AlertForm.Type.Info);
+            }
             else
-                MessageBox.Show("Please, input the text first");
+                Alert("Input field is empty", AlertForm.Type.Error);
         }
 
         #endregion
