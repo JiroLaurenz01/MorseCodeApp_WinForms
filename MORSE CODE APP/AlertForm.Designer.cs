@@ -38,7 +38,7 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.noticeLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.removeBtn = new Guna.UI2.WinForms.Guna2ControlBox();
             this.containerControl = new Guna.UI2.WinForms.Guna2ContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.containerControl.SuspendLayout();
@@ -84,25 +84,26 @@
             this.noticeLabel.TabIndex = 1;
             this.noticeLabel.Text = "Notice";
             // 
-            // guna2ControlBox1
+            // removeBtn
             // 
-            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.CustomClick = true;
-            this.guna2ControlBox1.CustomizableEdges = customizableEdges1;
-            this.guna2ControlBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(328, 0);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(39, 31);
-            this.guna2ControlBox1.TabIndex = 0;
+            this.removeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.removeBtn.CustomClick = true;
+            this.removeBtn.CustomizableEdges = customizableEdges1;
+            this.removeBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.removeBtn.FillColor = System.Drawing.Color.Transparent;
+            this.removeBtn.IconColor = System.Drawing.Color.White;
+            this.removeBtn.Location = new System.Drawing.Point(328, 0);
+            this.removeBtn.Name = "removeBtn";
+            this.removeBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.removeBtn.Size = new System.Drawing.Size(39, 31);
+            this.removeBtn.TabIndex = 0;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // containerControl
             // 
             this.containerControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(118)))), ((int)(((byte)(236)))));
             this.containerControl.Controls.Add(this.noticeLabel);
-            this.containerControl.Controls.Add(this.guna2ControlBox1);
+            this.containerControl.Controls.Add(this.removeBtn);
             this.containerControl.CustomizableEdges = customizableEdges3;
             this.containerControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.containerControl.FillColor = System.Drawing.Color.Empty;
@@ -144,6 +145,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ContainerControl containerControl;
         private Guna.UI2.WinForms.Guna2HtmlLabel noticeLabel;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2ControlBox removeBtn;
     }
 }
