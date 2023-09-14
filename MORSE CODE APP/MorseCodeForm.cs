@@ -79,15 +79,18 @@ namespace MORSE_CODE_APP
 
             if (!String.IsNullOrEmpty(inputTextBox.Text))
             {
+                // Get Morse code from the input TextBox and Trim trailing spaces
                 string morse = inputTextBox.Text;
                 morse = morse.TrimEnd(' ');
+
+                // Split the Morse code by spaces to get each element
                 string[] morseArray = morse.Split(' ');
 
                 // Show the loading screen form on the UI thread
                 LoadingScreenForm loadingScreen = new();
                 Invoke(new Action(() => loadingScreen.ShowDialog()));
 
-                // Translate each letter to Morse code
+                // Translate each Morse code element back to its corresponding letter or symbol
                 string resultHolder = await Task.Run(() =>
                 {
                     StringBuilder result = new StringBuilder();
@@ -96,12 +99,12 @@ namespace MORSE_CODE_APP
                     {
                         try
                         {
-                            // Translates Morse code element (morseArray[i]) to its corresponding letter or symbol.
+                            // Translate the Morse code element (morseArray[i]) to its corresponding letter or symbol.
                             result.Append(morseLetters[Array.IndexOf(morseCodes, morseArray[i])]);
                         }
                         catch
                         {
-                            result.Append('#'); // If letter is invalid, display a "#"
+                            result.Append('#'); // If the letter is not recognized, display "#"
                         }
                     }
 
