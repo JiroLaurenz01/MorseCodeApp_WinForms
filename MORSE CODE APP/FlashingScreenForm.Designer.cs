@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlashingScreenForm));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -86,7 +87,7 @@
             // 
             this.progressBar.BackColor = System.Drawing.Color.Transparent;
             this.progressBar.BorderColor = System.Drawing.Color.Transparent;
-            this.progressBar.CustomizableEdges = customizableEdges3;
+            this.progressBar.CustomizableEdges = customizableEdges1;
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.progressBar.Location = new System.Drawing.Point(0, 308);
             this.progressBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -94,7 +95,7 @@
             this.progressBar.ProgressColor = System.Drawing.Color.DarkOliveGreen;
             this.progressBar.ProgressColor2 = System.Drawing.Color.DarkOliveGreen;
             this.progressBar.ShadowDecoration.BorderRadius = 1;
-            this.progressBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.progressBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.progressBar.Size = new System.Drawing.Size(540, 14);
             this.progressBar.TabIndex = 7;
             this.progressBar.Text = "guna2ProgressBar1";
@@ -128,13 +129,14 @@
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximumSize = new System.Drawing.Size(540, 322);
             this.MinimumSize = new System.Drawing.Size(540, 322);
             this.Name = "FlashingScreenForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FlashingScreenForm";
+            this.Text = "MorseCode Translator";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.FlashingScreenForm_Load);
             this.ResumeLayout(false);
