@@ -39,7 +39,6 @@ namespace MORSE_CODE_APP
 
         #endregion
 
-
         public AlertForm()
         {
             InitializeComponent();
