@@ -38,7 +38,7 @@ namespace MORSE_CODE_APP
                 string resultHolder = await Task.Run(() =>
                 {
                     // Create a StringBuilder to build the Morse code result
-                    StringBuilder result = new StringBuilder();
+                    StringBuilder result = new();
 
                     // Iterate through each character in the input text
                     for (int i = 0; i < letters.Length; i++)
@@ -93,7 +93,7 @@ namespace MORSE_CODE_APP
                 // Translate each Morse code element back to its corresponding letter or symbol
                 string resultHolder = await Task.Run(() =>
                 {
-                    StringBuilder result = new StringBuilder();
+                    StringBuilder result = new();
 
                     for (int i = 0; i < morseArray.Length; i++)
                     {
